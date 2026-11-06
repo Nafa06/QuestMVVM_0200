@@ -3,6 +3,9 @@ package com.example.pertemuan8.view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
@@ -96,6 +99,14 @@ fun FormSiswa(
                 label = { Text(text = "Alamat Lengkap") },
                 onValueChange = { txtAlamat = it }
             )
+            Spacer(modifier = Modifier.height(20.dp))
+            Button(
+                modifier = Modifier.fillMaxWidth(1f),
+                enabled = txtAlamat.isNotEmpty(),
+                onClick = { onSubmitButtonClicked(listData) }
+            ) {
+                Text(stringResource(R.string.submit))
+            }
         }
     }
 }
