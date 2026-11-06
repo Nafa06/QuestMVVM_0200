@@ -2,8 +2,10 @@ package com.example.pertemuan8.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -62,6 +64,17 @@ fun FormSiswa(
                 thickness = dimensionResource(R.dimen.thickness_divider),
                 color = Color.Blue
             )
+            Row {
+                pilihanJK.forEach { item ->
+                    Row(
+                        modifier = Modifier.selectable(
+                            selected = txtGender == item,
+                            onClick = { txtGender = item }
+                        ),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {}
+                }
+            }
         }
     }
 }
