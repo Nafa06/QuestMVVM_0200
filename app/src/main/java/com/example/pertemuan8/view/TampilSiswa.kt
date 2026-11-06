@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.pertemuan8.R
 import com.example.pertemuan8.model.Siswa
@@ -36,6 +37,11 @@ fun TampilSiswa(
         Column(
             modifier = Modifier.padding(isiRuang),
             verticalArrangement = Arrangement.SpaceBetween
-        ){}
+        ){
+            Column(
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
+            ) {}
+        }
     }
 }
