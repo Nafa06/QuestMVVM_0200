@@ -3,6 +3,7 @@ package com.example.pertemuan8.view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -15,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.example.pertemuan8.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,6 +45,15 @@ fun FormSiswa(
             modifier = Modifier.padding(isiRuang),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
-        ) {}
+        ) {
+            OutlinedTextField(
+                value = txtNama,
+                singleLine = true,
+                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier.width(250.dp).padding(top = 20.dp),
+                label = { Text(text = "Nama Lengkap") },
+                onValueChange = { txtNama = it }
+            )
+        }
     }
 }
